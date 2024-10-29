@@ -9,7 +9,7 @@ export default function Home() {
 
     return (
         <div className='min-h-screen font-sans bg-white text-black dark:bg-slate-950 dark:text-white'>
-            <header className="border-b border-slate-800 bg-opacity-80 backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-md">
+            <header className="border-b border-slate-300 dark:border-slate-800 bg-opacity-80 backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-md">
                 <Navbar />
             </header>
 

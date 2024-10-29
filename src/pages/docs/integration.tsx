@@ -33,7 +33,7 @@ const components = [
 
 const Installation = () => {
     return (
-        <section className="p-4 bg-white dark:bg-slate-900 mt-12 lg:mt-0 ">
+        <section className="p-4 bg-white dark:bg-slate-900 mt-12 lg:mt-0">
             <Breadcrumb>
                 <BreadcrumbList className="flex items-center mb-6 text-xl">
                     <BreadcrumbItem>
@@ -41,18 +41,18 @@ const Installation = () => {
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
-                        <BreadcrumbPage>Componentes</BreadcrumbPage>
+                        <BreadcrumbPage>Guia de Integrações</BreadcrumbPage>
                     </BreadcrumbItem>
                 </BreadcrumbList>
             </Breadcrumb>
-            <h2 className="text-4xl font-bold mb-4">Componentes do InnoTech UI</h2>
+            <h2 className="text-4xl font-bold mb-4">Guia de Integrações do InnoTech UI</h2>
             <p>...</p>
         </section>
     );
 };
 
 
-const ComponentsDocs = () => {
+const IntegrationDocs = () => {
     const pathname = usePathname();
     const isActive = (path: string) => pathname === path;
 
@@ -141,4 +141,4 @@ const ComponentsDocs = () => {
     );
 };
 
-export default ComponentsDocs;
+export default IntegrationDocs;
