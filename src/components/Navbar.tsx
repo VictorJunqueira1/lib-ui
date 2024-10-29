@@ -24,8 +24,7 @@ const Navbar = () => {
             <div className="hidden lg:flex gap-8">
                 <Link href="/docs" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Documentação</Link>
                 <Link href="/docs/installation" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Instalação</Link>
-                <Link href="/installation" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Algo 1</Link>
-                <Link href="/installation" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Algo 2</Link>
+                <Link href="/docs/components" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Componentes</Link>
                 <Link href="/contact" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Contato</Link>
             </div>
 

@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Headset, Menu, Home, Download, Book, PlusCircle, Info } from "lucide-react";
+import { Headset, Menu, Home, Download, Book, PlusCircle, Info, Puzzle } from "lucide-react";
 import {
     Sheet,
     SheetContent,
@@ -13,24 +13,44 @@ import {
 } from "@/components/ui/sheet";
 import "@/app/globals.css";
 import { ModeToggle } from "@/components/ModeToggle";
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
 
 const components = [
     { title: "Início", href: "/", description: "Volte ao início da página." },
     { title: "Documentação", href: "/docs", description: "Veja como iniciar seus componentes." },
     { title: "Instalação", href: "/docs/installation", description: "Tutorial de instalação." },
+    { title: "Componentes", href: "/docs/components", description: "Confira os componentes." },
     { title: "Suporte", href: "/docs/support", description: "Entre em contato com nosso suporte." },
 ];
 
 const Installation = () => {
     return (
         <section className="p-4 bg-white dark:bg-slate-900 mt-12 lg:mt-0 max-w-7xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4">Como Utilizar os Componentes do InnoTech UI</h2>
-            <p className="mb-4">
+            <Breadcrumb>
+                <BreadcrumbList className="flex items-center mb-6 text-xl">
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/" className="text-gray-300">Início</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator />
+                    <BreadcrumbItem>
+                        <BreadcrumbPage>Instalação</BreadcrumbPage>
+                    </BreadcrumbItem>
+                </BreadcrumbList>
+            </Breadcrumb>
+            <h2 className="text-4xl font-bold mb-4">Como Utilizar os Componentes do InnoTech UI</h2>
+            <p className="mb-4 text-lg">
                 O InnoTech UI facilita o uso de componentes em seus projetos. Siga os passos abaixo para iniciar sua jornada!
             </p>
 
             <h3 className="text-xl font-semibold mb-2">1. Instalação do Lucide React</h3>
-            <p className="mb-4">
+            <p className="mb-4 text-lg">
                 Para incorporar os ícones do InnoTech UI, comece instalando a biblioteca Lucide React. Execute o seguinte comando em seu terminal:
             </p>
             <code className="block p-2 mb-4 bg-slate-100 dark:bg-slate-800 rounded">
@@ -38,7 +58,7 @@ const Installation = () => {
             </code>
 
             <h3 className="text-xl font-semibold mb-2">2. Utilização dos Componentes</h3>
-            <p className="mb-4">
+            <p className="mb-4 text-lg">
                 Os componentes do InnoTech UI podem ser facilmente copiados e colados em seu projeto. Não é necessário instalar bibliotecas adicionais. Siga estes passos simples:
             </p>
             <ul className="list-disc list-inside mb-4">
@@ -48,24 +68,24 @@ const Installation = () => {
             </ul>
 
             <h3 className="text-xl font-semibold mb-2">3. Usando a Biblioteca Shadcn</h3>
-            <p className="mb-4">
+            <p className="mb-4 text-lg">
                 Para aprimorar ainda mais a estilização de seus componentes, considere utilizar a biblioteca Shadcn. Siga o tutorial abaixo para instalá-la:
             </p>
             <code className="block p-2 mb-4 bg-slate-100 dark:bg-slate-800 rounded">
                 npm install shadcn
             </code>
-            <p className="mb-4">
+            <p className="mb-4 text-lg">
                 Após a instalação, você poderá usar as classes da Shadcn para melhorar a aparência dos seus componentes de maneira fácil e rápida.
             </p>
 
             <h3 className="text-xl font-semibold mb-2">Exemplo de Componente</h3>
-            <p className="mb-4">
+            <p className="mb-4 text-lg">
                 Aqui está um exemplo de um botão que você pode usar em seu projeto:
             </p>
             <code className="block p-2 mb-4 bg-slate-100 dark:bg-slate-800 rounded">
                 {`<button className="bg-blue-600 text-white p-2 rounded">Clique Aqui</button>`}
             </code>
-            <p className="mb-4">Sinta-se à vontade para copiar e colar este código em seu projeto e adaptá-lo conforme necessário!</p>
+            <p className="mb-4 text-lg">Sinta-se à vontade para copiar e colar este código em seu projeto e adaptá-lo conforme necessário!</p>
         </section>
     );
 };
@@ -93,8 +113,8 @@ const InstallationDocs = () => {
                     </div>
                 </nav>
                 <div className="flex">
-                    <aside className="w-60 min-h-screen pt-4 bg-white border-r border-slate-200 dark:bg-slate-950 dark:border-slate-700">
-                        <div className="h-full px-3 pb-4 overflow-y-auto">
+                    <aside className="w-80 min-h-screen pt-4 bg-white border-r border-slate-200 dark:bg-slate-950 dark:border-slate-700">
+                        <div className="h-screen px-3 pb-4 overflow-y-auto">
                             <ul className="space-y-2 font-normal text-xl">
                                 {components.map(component => (
                                     <li key={component.title}>
@@ -105,6 +125,7 @@ const InstallationDocs = () => {
                                             {component.title === "Início" && <Home className="w-5 h-5 text-blue-700" />}
                                             {component.title === "Documentação" && <Book className="w-5 h-5 text-blue-700" />}
                                             {component.title === "Instalação" && <Download className="w-5 h-5 text-blue-700" />}
+                                            {component.title === "Componentes" && <Puzzle className="w-5 h-5 text-blue-700" />}
                                             {component.title === "Suporte" && <Headset className="w-5 h-5 text-blue-700" />}
                                             <span className="flex-1 ml-2">{component.title}</span>
                                         </Link>

@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Headset, Menu, Home, Download, Book, Puzzle } from "lucide-react";
+import { Headset, Menu, Home, Download, Book, PlusCircle, Info, Puzzle } from "lucide-react";
 import {
     Sheet,
     SheetContent,
@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/sheet";
 import "@/app/globals.css";
 import { ModeToggle } from "@/components/ModeToggle";
-import { FAQ } from "@/components/FAQ";
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -31,7 +30,7 @@ const components = [
     { title: "Suporte", href: "/docs/support", description: "Entre em contato com nosso suporte." },
 ];
 
-const Introduction = () => {
+const Installation = () => {
     return (
         <section className="p-4 bg-white dark:bg-slate-900 mt-12 lg:mt-0 max-w-7xl mx-auto">
             <Breadcrumb>
@@ -41,30 +40,18 @@ const Introduction = () => {
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
-                        <BreadcrumbPage>Documentação</BreadcrumbPage>
+                        <BreadcrumbPage>Componentes</BreadcrumbPage>
                     </BreadcrumbItem>
                 </BreadcrumbList>
             </Breadcrumb>
-            <h2 className="text-4xl font-bold mb-4">Bem-vindo ao InnoTech UI!</h2>
-            <p className="mb-4 text-lg">
-                O InnoTech UI é uma coleção de componentes reutilizáveis, projetada para simplificar a construção de aplicativos modernos. Nossa biblioteca é acessível, personalizável e open source, proporcionando flexibilidade para atender às suas necessidades específicas.
-            </p>
-            <p className="mb-4 text-lg">
-                <strong>O que significa "não é uma biblioteca de componentes"?</strong><br />
-                Isso significa que você não precisa instalar o InnoTech UI como uma dependência em seu projeto. Em vez disso, você pode copiar o código diretamente e usá-lo conforme desejar. Este modelo garante total liberdade e controle sobre seu código.
-            </p>
-            <p className="mb-4 text-lg">
-                Selecione os componentes que mais se adequam ao seu projeto, adapte-os conforme necessário e personalize-os para atender às suas demandas. O código é seu para modificar e aprimorar à vontade.
-            </p>
-            <p className="mb-4 text-lg">
-                Use o InnoTech UI como base para desenvolver suas próprias bibliotecas de componentes, inspirando-se em nosso design e funcionalidade, e contribuindo para uma comunidade mais colaborativa e criativa.
-            </p>
-            <FAQ />
+            <h2 className="text-4xl font-bold mb-4">Componentes do InnoTech UI</h2>
+            <p>...</p>
         </section>
     );
 };
 
-const Docs = () => {
+
+const ComponentsDocs = () => {
     const pathname = usePathname();
     const isActive = (path: string) => pathname === path;
 
@@ -108,7 +95,7 @@ const Docs = () => {
                         </div>
                     </aside>
                     <main className="min-h-screen p-4 w-full bg-slate-50 dark:bg-slate-900">
-                        <Introduction />
+                        <Installation />
                     </main>
                 </div>
             </div>
@@ -145,11 +132,11 @@ const Docs = () => {
                     </Sheet>
                 </div>
                 <main className="pt-16 min-h-screen p-4 w-full bg-slate-50 dark:bg-slate-900">
-                    <Introduction />
+                    <Installation />
                 </main>
             </div>
         </div>
     );
 };
 
-export default Docs;
+export default ComponentsDocs;
