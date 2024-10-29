@@ -50,9 +50,9 @@ const Introduction = () => {
             <p className="mb-4 text-lg">
                 O InnoTech UI é uma coleção de componentes reutilizáveis, projetada para simplificar a construção de aplicativos modernos. Nossa biblioteca é acessível, personalizável e open source, proporcionando flexibilidade para atender às suas necessidades específicas.
             </p>
-            <p className="mb-4 text-lg">
-                <strong>O que significa "não é uma biblioteca de componentes"?</strong><br />
-                Isso significa que você não precisa instalar o InnoTech UI como uma dependência em seu projeto. Em vez disso, você pode copiar o código diretamente e usá-lo conforme desejar. Este modelo garante total liberdade e controle sobre seu código.
+            <p>
+                <strong>O que significa &quot;não é uma biblioteca de componentes&quot;?</strong><br />
+                Isso significa que você não precisa instalar o InnoTech UI como uma dependência em seu projeto.
             </p>
             <p className="mb-4 text-lg">
                 Selecione os componentes que mais se adequam ao seu projeto, adapte-os conforme necessário e personalize-os para atender às suas demandas. O código é seu para modificar e aprimorar à vontade.
