@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Headset, Menu, Home, Download, Book, PlusCircle, Info, Puzzle, Workflow } from "lucide-react";
+import { Headset, Menu, Home, Download, Book, Puzzle, Workflow } from "lucide-react";
 import {
     Sheet,
     SheetContent,
