@@ -64,13 +64,13 @@ export default function Home() {
                         <p className="text-lg">A InnoTech UI é flexível e pode ser integrada com várias tecnologias:</p>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                             {[
-                                { tech: 'HTML, CSS e JavaScript', icons: ['html5', 'css3', 'javascript'], url: '/integrations/html-css-js' },
-                                { tech: 'Next.js e Tailwind', icons: ['nextjs', 'tailwindcss'], url: '/integrations/next-tailwind' },
-                                { tech: 'Vue e Nuxt.js', icons: ['vuejs', 'nuxtjs'], url: '/integrations/vue-nuxt' },
+                                { tech: 'HTML, CSS e JavaScript', icons: ['html5', 'css3', 'javascript'], url: '/integrations/integration-guides' },
+                                { tech: 'Next.js e Tailwind', icons: ['nextjs', 'tailwindcss'], url: '/integrations/integration-guides' },
+                                { tech: 'Vue e Nuxt.js', icons: ['vuejs', 'nuxtjs'], url: '/integrations/integration-guides' },
                             ].map(({ tech, icons, url }) => (
                                 <Link href={url} key={tech}>
                                     <Card
-                                        className="p-4 text-center hover:shadow-md transition-shadow bg-slate-950 flex flex-col items-center justify-center h-40 w-full max-w-[200px] mx-auto"
+                                        className="p-4 text-center hover:shadow-md transition-shadow dark:bg-slate-950 flex flex-col items-center justify-center h-40 w-full max-w-[200px] mx-auto"
                                     >
                                         <CardContent className="p-0 flex flex-col items-center">
                                             <div className="flex justify-center space-x-2 mb-3">
@@ -91,9 +91,11 @@ export default function Home() {
                                 </Link>
                             ))}
                         </div>
-                        <Button className="mt-6">
-                            Ver Guias de Integração <ChevronRight className="ml-2 h-4 w-4" />
-                        </Button>
+                        <Link href={'/integrations/integration-guides'}>
+                            <Button className="mt-6">
+                                Ver Guias de Integração <ChevronRight className="ml-2 h-4 w-4" />
+                            </Button>
+                        </Link>
                     </div>
                 );
             case 'components':
