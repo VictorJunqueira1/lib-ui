@@ -101,7 +101,7 @@ export default function IntegrationGuides() {
                             }}
                             className="w-full justify-start text-left"
                         >
-                            <img src={tab.icon} alt={`${tab.label} icon`} className="mr-2 h-4 w-4" />
+                            <Image src={tab.icon} alt={`${tab.label} icon`} className="mr-2 h-4 w-4" />
                             {tab.label}
                         </Button>
                     ))}
