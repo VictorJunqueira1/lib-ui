@@ -10,7 +10,7 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 import { Component } from 'lucide-react';
-import { ModeToggle } from './ModeToggle';
+import { ModeToggle } from '@/components/ModeToggle';
 import { useTheme } from 'next-themes';
 
 const Navbar = () => {
