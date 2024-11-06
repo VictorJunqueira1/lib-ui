@@ -117,19 +117,26 @@ export default function IntegrationGuides() {
                         >
                             <Card className="bg-white dark:bg-slate-900 shadow-lg border-0">
                                 <CardContent className="p-6 md:p-8">
-                                    <h2 className="text-3xl font-bold mb-2 text-purple-600 dark:text-purple-400 flex items-center">
-                                        {tabs.find(tab => tab.id === activeTab)?.icon && (
-                                            <Image
-                                                src={tabs.find(tab => tab.id === activeTab)?.icon!}
-                                                alt={`${tabs.find(tab => tab.id === activeTab)?.label} icon`}
-                                                className="mr-3 h-8 w-8"
-                                                width={32}
-                                                height={32}
-                                            />
-                                        )}
-                                        {tabs.find(tab => tab.id === activeTab)?.label}
-                                    </h2>
-                                    {renderContent()}
+                                    {(() => {
+                                        const activeTabData = tabs.find(tab => tab.id === activeTab);
+                                        return (
+                                            <>
+                                                <h2 className="text-3xl font-bold mb-2 text-purple-600 dark:text-purple-400 flex items-center">
+                                                    {activeTabData?.icon && (
+                                                        <Image
+                                                            src={activeTabData.icon}
+                                                            alt={`${activeTabData.label} icon`}
+                                                            className="mr-3 h-8 w-8"
+                                                            width={32}
+                                                            height={32}
+                                                        />
+                                                    )}
+                                                    {activeTabData?.label}
+                                                </h2>
+                                                {renderContent()}
+                                            </>
+                                        );
+                                    })()}
                                 </CardContent>
                             </Card>
                         </motion.div>
