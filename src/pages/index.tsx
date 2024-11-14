@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { ArrowRight, Book, Menu, X } from 'lucide-react'
+import { ArrowRight, Book, Boxes, HeartHandshake, Menu, X } from 'lucide-react'
 import "@/app/globals.css"
 import { Button } from "@/components/ui/button"
 import {
@@ -12,7 +12,9 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import { ModeToggle } from "@/components/ModeToggle"
-import { Card, CardHeader } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { GitHubLogoIcon } from "@radix-ui/react-icons"
 
 export default function InnoTechUILayout() {
     const [isSidebarOpen, setIsSidebarOpen] = React.useState(false)
@@ -64,10 +66,10 @@ export default function InnoTechUILayout() {
                                 <AccordionTrigger className="rounded-lg px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors">Integração</AccordionTrigger>
                                 <AccordionContent>
                                     <div className="space-y-2 px-4">
-                                        <Link href="/integrations/html-css-js" className="block rounded-lg px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground transition-colors">
+                                        <Link href="/integrations/html-css" className="block rounded-lg px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground transition-colors">
                                             HTML, CSS e JS
                                         </Link>
-                                        <Link href="/integration/nextjs-tailwind" className="block rounded-lg px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground transition-colors">
+                                        <Link href="/integrations/next-tailwind" className="block rounded-lg px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground transition-colors">
                                             Next.js e Tailwind
                                         </Link>
                                     </div>
@@ -103,7 +105,7 @@ export default function InnoTechUILayout() {
                 <main className="flex-1 overflow-y-auto">
                     <div className="container mx-auto px-4 py-8">
                         <section className="mb-16 text-center">
-                            <h1 className="mb-4 text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 md:text-5xl lg:text-6xl">
+                            <h1 className="mb-4 text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-purple-600 md:text-5xl lg:text-6xl">
                                 Bem-vindo ao InnoTech UI
                             </h1>
                             <p className="mb-6 text-xl text-muted-foreground md:text-2xl">
@@ -118,19 +120,16 @@ export default function InnoTechUILayout() {
                                 <Button size="lg" variant="outline" asChild>
                                     <Link href="#section-components">Explorar Componentes</Link>
                                 </Button>
+                                <section className="mb-16 text-center">
+                                    <Button size="lg" variant="outline" asChild>
+                                        <Link href="https://github.com/seu-repositorio/inno-tech-ui" target="_blank">
+                                            <GitHubLogoIcon className="mr-2 h-5 w-5 text-white" />
+                                            Star on GitHub
+                                        </Link>
+                                    </Button>
+                                </section>
                             </div>
                         </section>
-
-                        {/* Start on GitHub Button */}
-                        <section className="mb-16 text-center">
-                            <Button size="lg" variant="secondary" asChild>
-                                <Link href="https://github.com/seu-repositorio/inno-tech-ui" target="_blank">
-                                    <GitHub className="mr-2 h-5 w-5 text-black" />
-                                    Start on GitHub
-                                </Link>
-                            </Button>
-                        </section>
-
                         <section className="mb-16">
                             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                                 <Card>
@@ -171,76 +170,6 @@ export default function InnoTechUILayout() {
                                 </Card>
                             </div>
                         </section>
-
-                        <section id="section-documentation" className="mb-16">
-                            <h2 className="text-3xl font-bold mb-6">Como Usar a Biblioteca</h2>
-                            <p className="mb-6 text-lg text-muted-foreground">
-                                O InnoTech UI foi desenvolvido para ser simples e fácil de usar. Não há necessidade de instalar pacotes ou dependências. Basta copiar o código e incluir os arquivos de estilo (CSS) e script (JS) no seu projeto.
-                            </p>
-
-                            <Tabs defaultValue="setup" className="w-full">
-                                <TabsList className="mb-4">
-                                    <TabsTrigger value="setup">Configuração</TabsTrigger>
-                                    <TabsTrigger value="usage">Uso</TabsTrigger>
-                                </TabsList>
-                                <TabsContent value="setup">
-                                    <Card>
-                                        <CardHeader>
-                                            <CardTitle>Passo 1: Adicionando o InnoTech UI ao seu Projeto</CardTitle>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <p className="mb-4">
-                                                Para começar, adicione o arquivo CSS e JS da biblioteca em seu HTML. Você pode fazer isso copiando os links abaixo:
-                                            </p>
-                                            <pre className="bg-muted p-4 rounded-lg overflow-x-auto">
-                                                <code>
-                                                    &lt;link rel="stylesheet" href="https://cdn.innotech-ui.com/css/innotech-ui.min.css"&gt;<br />
-                                                    &lt;script src="https://cdn.innotech-ui.com/js/innotech-ui.min.js"&gt;&lt;/script&gt;
-                                                </code>
-                                            </pre>
-                                        </CardContent>
-                                    </Card>
-                                </TabsContent>
-                                <TabsContent value="usage">
-                                    <Card>
-                                        <CardHeader>
-                                            <CardTitle>Passo 2: Usando Componentes</CardTitle>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <p className="mb-4">
-                                                O InnoTech UI inclui diversos componentes que você pode usar diretamente em seu projeto. Abaixo, apresentamos alguns exemplos básicos de uso.
-                                            </p>
-                                            <h4 className="text-xl font-semibold mb-2">Exemplo: Botão</h4>
-                                            <pre className="bg-muted p-4 rounded-lg overflow-x-auto mb-4">
-                                                <code>
-                                                    &lt;button class="inno-button"&gt;Clique aqui&lt;/button&gt;
-                                                </code>
-                                            </pre>
-                                            <h4 className="text-xl font-semibold mb-2">Exemplo: Tabela</h4>
-                                            <pre className="bg-muted p-4 rounded-lg overflow-x-auto">
-                                                <code>
-                                                    &lt;table class="inno-table"&gt;<br />
-                                                    &nbsp;&nbsp;&lt;thead&gt;<br />
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Nome&lt;/th&gt;<br />
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Idade&lt;/th&gt;<br />
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-                                                    &nbsp;&nbsp;&lt;/thead&gt;<br />
-                                                    &nbsp;&nbsp;&lt;tbody&gt;<br />
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;João&lt;/td&gt;<br />
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;28&lt;/td&gt;<br />
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-                                                    &nbsp;&nbsp;&lt;/tbody&gt;<br />
-                                                    &lt;/table&gt;
-                                                </code>
-                                            </pre>
-                                        </CardContent>
-                                    </Card>
-                                </TabsContent>
-                            </Tabs>
-                        </section>
-
                         <section id="section-support" className="mb-16">
                             <h2 className="text-3xl font-bold mb-6">Suporte</h2>
                             <Card>
