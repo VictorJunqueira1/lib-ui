@@ -196,8 +196,10 @@ export default function NextTailwind() {
         <>
             <MainLayout>
                 <main className="flex-1 overflow-y-auto">
-                    <h1 className="text-3xl mb-12">Guia de Integração - Next.js, Tailwind e TypeScript</h1>
-                    <h1 className="text-xl mb-4">Exemplo do componente:</h1>
+                    <h1 className="text-3xl mb-12">Guia de Integração - Next.js, Tailwind e TypeScript&quot;</h1>
+                    <h1 className="text-xl mb-4">
+                        Exemplo do componente:
+                    </h1>
                     <div className="max-w-7xl mx-auto bg-gray-800 px-2 py-4">
                         <Sidebar>
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium praesentium nulla reiciendis, expedita ea ex quasi quo veniam asperiores et quam ullam nobis? Sed quisquam necessitatibus eveniet facere alias provident.
