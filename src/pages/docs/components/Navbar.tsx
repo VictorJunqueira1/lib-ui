@@ -22,10 +22,10 @@ const Navbar = () => {
             <h1 className="text-3xl font-bold">InnoTech UI</h1>
 
             <div className="hidden lg:flex gap-8">
-                <Link href="/docs" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Documentação</Link>
-                <Link href="/docs/installation" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Instalação</Link>
-                <Link href="/docs/components" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Componentes</Link>
-                <Link href="/contact" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Contato</Link>
+                <Link href="/" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Documentação</Link>
+                <Link href="/" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Instalação</Link>
+                <Link href="/" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Componentes</Link>
+                <Link href="/" className="text-black hover:text-slate-600 dark:text-gray-100 dark:hover:text-gray-400 transition">Contato</Link>
             </div>
 
             <div className="block lg:hidden">

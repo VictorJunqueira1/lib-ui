@@ -94,22 +94,22 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
     return (
         <div className="flex">
             <nav
-                className={`bg-slate-900 ${
+                className={`dark:bg-slate-900 bg-slate-50 ${
                     isOpen ? 'w-[250px]' : 'w-[80px]'
                 } h-screen transition-all duration-300 shrink-0`}
             >
                 <ul className="list-none p-4 h-screen">
                     <li className="flex justify-between items-center mb-4">
                         <span
-                            className={`${isOpen ? 'font-semibold' : 'hidden'} text-white text-lg ml-4`}
+                            className={`${isOpen ? 'font-semibold' : 'hidden'} dark:text-white text-lg ml-4`}
                         >
-                            SIX UI
+                            InnoTech UI
                         </span>
                         <button onClick={toggleSidebar} id="toggle-btn">
                             {isOpen ? (
-                                <ChevronLeft size={24} className="text-white" />
+                                <ChevronLeft size={24} className="dark:text-white" />
                             ) : (
-                                <ChevronRight size={24} className="text-white ml-3" />
+                                <ChevronRight size={24} className="dark:text-white ml-3" />
                             )}
                         </button>
                     </li>
@@ -120,21 +120,21 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
                                 <>
                                     <button
                                         onClick={() => toggleSubMenu(item.label)}
-                                        className="flex items-center justify-between gap-4 p-3 rounded hover:bg-gray-800 w-full text-left"
+                                        className="flex items-center justify-between gap-4 p-3 rounded dark:hover:bg-gray-800 w-full text-left"
                                     >
                                         <div className="flex items-center gap-4">
                                             {item.icon}
                                             <span
-                                                className={`${isOpen ? 'block' : 'hidden'} text-gray-200`}
+                                                className={`${isOpen ? 'block' : 'hidden'} dark:text-gray-200`}
                                             >
                                                 {item.label}
                                             </span>
                                         </div>
                                         {isOpen &&
                                             (openSubMenu === item.label ? (
-                                                <ChevronUp size={20} className="text-white" />
+                                                <ChevronUp size={20} className="dark:text-white" />
                                             ) : (
-                                                <ChevronDown size={20} className="text-white" />
+                                                <ChevronDown size={20} className="dark:text-white" />
                                             ))}
                                     </button>
                                     <ul
@@ -146,7 +146,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
                                             <li key={subIndex}>
                                                 <Link
                                                     href={subItem.href}
-                                                    className="block py-4 px-4 hover:bg-gray-800 rounded text-gray-200"
+                                                    className="block py-4 px-4 dark:hover:bg-gray-800 rounded dark:text-gray-200"
                                                 >
                                                     {subItem.label}
                                                 </Link>
@@ -156,10 +156,10 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
                                 </>
                             ) : (
                                 <Link href={item.href}>
-                                    <p className="flex items-center gap-4 p-3 rounded hover:bg-gray-800">
+                                    <p className="flex items-center gap-4 p-3 rounded dark:hover:bg-gray-800">
                                         {item.icon}
                                         <span
-                                            className={`${isOpen ? 'block' : 'hidden'} text-gray-200`}
+                                            className={`${isOpen ? 'block' : 'hidden'} dark:text-gray-200`}
                                         >
                                             {item.label}
                                         </span>
