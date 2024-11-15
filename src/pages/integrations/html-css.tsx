@@ -46,7 +46,37 @@ export default function HtmlCSS() {
                     </Sidebar>
                 </div>
                 <div className="mx-auto bg-gray-900 text-white rounded-lg shadow-md p-6 mt-6 relative">
-                    
+                    <div className="flex justify-between items-center">
+                        <button onClick={toggleExpand} className="text-blue-400 hover:underline">
+                            {isExpanded ? "Recolher código" : "Expandir código"}
+                        </button>
+                        <button onClick={handleCopy} className="text-green-400 hover:underline">
+                            Copiar
+                        </button>
+                    </div>
+                    {isExpanded && (
+                        <pre className="whitespace-pre-wrap overflow-auto mt-4">
+                            <code>
+                                {`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Código</title>
+    <style>
+        body { background-color: #333; color: #fff; }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de Código</h1>
+    <p>Este é um exemplo de integração com HTML, CSS e JavaScript.</p>
+</body>
+</html>
+                                `}
+                            </code>
+                        </pre>
+                    )}
                 </div>
             </main>
         </MainLayout>
